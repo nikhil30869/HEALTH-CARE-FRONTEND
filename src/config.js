@@ -1,6 +1,6 @@
 const config = 
 {
-    url:"http://localhost:2007"
+    url:"https://health-care-backend-qsm9.onrender.com"
 }
 
 export default config
