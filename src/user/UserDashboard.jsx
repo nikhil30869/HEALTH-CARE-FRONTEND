@@ -159,17 +159,17 @@ const UserDashboard = () => {
   };
 
   const ProfileModal = () => (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-2xl w-full max-w-md transform animate-fade-in">
-        <div className="flex items-center justify-between p-6 border-b border-gray-200">
-          <h2 className="text-2xl font-bold text-gray-800">User Profile</h2>
-          <button 
-            onClick={() => setShowProfile(false)}
-            className="text-gray-500 hover:text-gray-700 transition-colors"
-          >
-            <FaTimes size={20} />
-          </button>
-        </div>
+  <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+    <div className="bg-white rounded-2xl w-full max-w-md transform animate-fade-in max-h-[90vh] overflow-y-auto">
+      <div className="flex items-center justify-between p-6 border-b border-gray-200">
+        <h2 className="text-2xl font-bold text-gray-800">User Profile</h2>
+        <button 
+          onClick={() => setShowProfile(false)}
+          className="text-gray-500 hover:text-gray-700 transition-colors"
+        >
+          <FaTimes size={20} />
+        </button>
+      </div>
 
         <div className="p-6">
           <div className="text-center mb-6">
