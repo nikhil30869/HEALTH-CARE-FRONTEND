@@ -1,6 +1,6 @@
 const config = 
 {
-    url:"https://health-care-backend-qsm9.onrender.com"
+    url:"https://healthcare-backend-b2a7.onrender.com"
 }
 
 export default config
