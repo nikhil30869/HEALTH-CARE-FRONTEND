@@ -4,7 +4,6 @@ import { FaArrowLeft, FaUser, FaEnvelope, FaCalendar, FaMapMarker, FaSave, FaChe
 import axios from 'axios';
 import config from '../config';
 
-
 const UpdateUserProfile = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -75,18 +74,20 @@ const UpdateUserProfile = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 via-secondary-50 to-purple-50">
-      <div className="absolute inset-0 overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-primary-50 via-secondary-50 to-purple-50 relative">
+      {/* Fixed background elements that don't interfere with scrolling */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
         <div className="absolute -top-40 -right-32 w-80 h-80 bg-primary-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
         <div className="absolute -bottom-40 -left-32 w-80 h-80 bg-secondary-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
         <div className="absolute top-40 left-1/2 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
       </div>
 
+      {/* Scrollable content */}
       <div className="container mx-auto px-6 py-8 relative z-10">
         <div className="flex items-center space-x-4 mb-8">
           <button
             onClick={() => navigate('/user')}
-            className="flex items-center space-x-2 text-gray-600 hover:text-gray-800 transition-colors bg-white/80 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20"
+            className="flex items-center space-x-2 text-gray-600 hover:text-gray-800 transition-colors bg-white/80 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20 shadow-sm hover:shadow-md"
           >
             <FaArrowLeft />
             <span>Back to Dashboard</span>
@@ -104,7 +105,7 @@ const UpdateUserProfile = () => {
             <p className="text-xl text-gray-600">Keep your information up to date</p>
           </div>
 
-          <div className="bg-white/80 backdrop-blur-lg rounded-3xl shadow-2xl border border-white/20 p-8">
+          <div className="bg-white/80 backdrop-blur-lg rounded-3xl shadow-2xl border border-white/20 p-8 mb-8">
             {success && (
               <div className="mb-6 bg-green-50 border border-green-200 text-green-600 px-4 py-3 rounded-xl flex items-center space-x-2 animate-pulse">
                 <FaCheck className="text-green-500" />
